@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "browser-use-api": {
+      "version": "1.0.1",
+      "installedAt": 1769668015485
+    },
+    "clippy": {
+      "version": "1.2.0",
+      "installedAt": 1769668488341
+    }
+  }
+}
