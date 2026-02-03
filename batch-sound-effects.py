@@ -14,7 +14,13 @@ from pathlib import Path
 
 # Configuration
 DOWNLOADS_DIR = "/Users/Josh/Library/CloudStorage/Dropbox/- LMT Audio/LMT Downloads"
-ELEVENLABS_API_KEY = "sk_b415fc3ebc3cdacbcef90b4c68f55424c515648c2b6fd66c"  # From config
+
+# Require API key from environment
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY")
+if not ELEVENLABS_API_KEY:
+    print("❌ ELEVENLABS_API_KEY environment variable not set")
+    print("   Set it with: export ELEVENLABS_API_KEY='your-api-key'")
+    sys.exit(1)
 
 def generate_sound_effect(prompt, filename, variation_num=None):
     """Generate a single sound effect using ElevenLabs via sag"""
