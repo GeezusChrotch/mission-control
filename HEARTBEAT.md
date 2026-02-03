@@ -78,3 +78,28 @@ Gather all data, format cleanly (no markdown tables, iMessage-friendly), and sen
 2. Telegram to last used chat
 
 If any tool fails (auth needed), note it in the briefing and suggest fix.
+
+---
+
+## Periodic Backup Check (Daily/Weekly)
+
+Check if workspace needs backing up to GitHub:
+
+```bash
+cd /Users/Josh/clawd && git status --short && git log --oneline origin/main..HEAD
+```
+
+**If uncommitted changes found:**
+- Summarize what's changed (files, lines added/removed)
+- Ask if user wants to commit
+- Suggest commit message based on changes
+- Remind to run: `git push` after committing
+
+**If commits ahead of origin/main:**
+- Alert: "X commits not backed up to GitHub"
+- Suggest: `git push origin main`
+
+**Why this matters:**
+- Laptop could die → lose everything not pushed
+- Manual sync = intentional, safe from accidental commits
+- I can help craft good commit messages
