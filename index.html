@@ -358,11 +358,29 @@
         }
 
         .column {
-            min-width: 300px;
-            max-width: 350px;
+            min-width: 240px;
+            max-width: 320px;
+            flex: 1;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        @media (max-width: 1200px) {
+            .column {
+                min-width: 220px;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .kanban {
+                flex-wrap: wrap;
+            }
+            .column {
+                min-width: calc(50% - 0.5rem);
+                max-width: none;
+            }
         }
 
         .column-header {
