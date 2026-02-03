@@ -1,0 +1,46 @@
+{
+  "cards": [
+    {
+      "id": "suggestion-1",
+      "title": "🤖 Create Animated Avatar for Roboboogie",
+      "description": "Design an animated avatar showing Roboboogie's different states:\n- Thinking/processing\n- Working on tasks\n- Relaxing/idle\n- Excited when finding something cool\n- Focused when running sub-agents\n\nImplement as an HTML/CSS animation that can be viewed in a browser, and could be incorporated into a future dashboard.\n\n📅 Created: Jan 31, 11:53 AM",
+      "column": "suggestions",
+      "createdAt": "2026-01-31T11:53:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T11:53:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-2",
+      "title": "🔄 Recurring Weekly Review",
+      "description": "Perform a weekly system review every Sunday that includes:\n- Usage statistics and cost tracking\n- Summary of interesting questions/tasks from the week\n- Suggestions for workflow improvements\n- Upcoming calendar events for the week ahead\n\nThis would provide consistent optimization and awareness of how you're using Roboboogie.\n\n📅 Created: Jan 31, 11:55 AM",
+      "column": "suggestions",
+      "createdAt": "2026-01-31T11:55:00-08:00", 
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T11:55:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-3",
+      "title": "🎭 Create Voice Character Collection",
+      "description": "Develop a library of character voices using ElevenLabs for storytelling and entertainment:\n- Wizened old wizard for fantasy stories\n- Gruff detective for mysteries\n- Excited child for fun facts\n- Nature documentary narrator\n\nSave profiles in a structured format for easy reuse in the sag skill.\n\n📅 Created: Jan 31, 11:56 AM",
+      "column": "suggestions",
+      "createdAt": "2026-01-31T11:56:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T11:56:00-08:00"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,12 @@
 
 Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
 
+## Contacts
+
+### Family
+- **Jane (wife)** → fancyjane@me.com (iMessage)
+- **Josh (you)** → jbessom@me.com (iMessage)
+
 ## Google Calendar iCal URLs
 
 ### W2W Schedule (work)

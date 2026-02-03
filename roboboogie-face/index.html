@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboboogie Face</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #222, #333);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        
+        .face {
+            width: 250px;
+            height: 250px;
+            background-color: #222;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            border: 4px solid #444;
+            overflow: hidden;
+        }
+        
+        .face:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+        
+        .eye-container {
+            position: absolute;
+            top: 25%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .eye {
+            width: 60px;
+            height: 60px;
+            background-color: #000;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px #00f5ff, 0 0 20px rgba(0, 245, 255, 0.5) inset;
+        }
+        
+        .pupil {
+            width: 30px;
+            height: 30px;
+            background-color: #00f5ff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+        
+        .mouth {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            background-color: #00f5ff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00808a;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        button:hover {
+            background-color: #00a0af;
+            transform: translateY(-2px);
+        }
+        
+        .status {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #00f5ff;
+            height: 1.5em;
+        }
+        
+        .thinking .pupil {
+            animation: thinking 2s ease infinite;
+        }
+        
+        @keyframes thinking {
+            0% { transform: translate(-50%, -50%); }
+            25% { transform: translate(-70%, -30%); }
+            50% { transform: translate(-30%, -70%); }
+            75% { transform: translate(-70%, -70%); }
+            100% { transform: translate(-50%, -50%); }
+        }
+        
+        .happy .mouth {
+            height: 20px;
+            bottom: 25%;
+            border-radius: 0 0 40px 40px;
+        }
+        
+        .working .pupil {
+            animation: working 1s linear infinite;
+            background-color: #ffcc00;
+        }
+        
+        @keyframes working {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .working .mouth {
+            height: 4px;
+            width: 80px;
+        }
+        
+        .confused .pupil {
+            animation: confused 3s ease infinite;
+            background-color: #ff55aa;
+        }
+        
+        @keyframes confused {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            25% { transform: translate(-60%, -50%) scale(1.2, 0.8); }
+            50% { transform: translate(-50%, -50%) scale(1); }
+            75% { transform: translate(-40%, -50%) scale(0.8, 1.2); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .confused .mouth {
+            transform: translateX(-50%) rotate(180deg);
+            border-radius: 20px 20px 0 0;
+            height: -10px;
+            bottom: 15%;
+        }
+        
+        .excited .pupil {
+            animation: excited 0.5s linear infinite;
+            background-color: #ffcc00;
+        }
+        
+        @keyframes excited {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .excited .mouth {
+            height: 30px;
+            bottom: 20%;
+            border-radius: 0 0 50px 50px;
+        }
+        
+        .subagent-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .subagent-active .subagent-container {
+            opacity: 1;
+        }
+        
+        .subagent {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 255, 255, 0.7);
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .subagent-1 {
+            animation: orbit 5s linear infinite;
+        }
+        
+        .subagent-2 {
+            animation: orbit 5s linear infinite reverse;
+            animation-delay: 0.5s;
+        }
+        
+        .subagent-3 {
+            animation: orbit 7s linear infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+        
+        .name {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #00f5ff;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        }
+        
+        .thinking-dots {
+            display: inline-block;
+            width: 50px;
+            text-align: left;
+        }
+        
+        .thinking-animation .thinking-dots::after {
+            content: "";
+            animation: thinking-dots 1.5s steps(4, end) infinite;
+        }
+        
+        @keyframes thinking-dots {
+            0%, 20% { content: ""; }
+            40% { content: "."; }
+            60% { content: ".."; }
+            80% { content: "..."; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="name">Roboboogie 🤖</h1>
+        <div class="face" id="face">
+            <div class="eye-container">
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="mouth"></div>
+            <div class="subagent-container">
+                <div class="subagent subagent-1"></div>
+                <div class="subagent subagent-2"></div>
+                <div class="subagent subagent-3"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="setMood('default')">Default</button>
+            <button onclick="setMood('happy')">Happy</button>
+            <button onclick="setMood('thinking')">Thinking</button>
+            <button onclick="setMood('working')">Working</button>
+            <button onclick="setMood('confused')">Confused</button>
+            <button onclick="setMood('excited')">Excited</button>
+            <button onclick="toggleSubagents()">Toggle Sub-agents</button>
+        </div>
+        <div class="status thinking-animation">Current status: <span id="status-text">Active</span><span class="thinking-dots"></span></div>
+    </div>
+
+    <script>
+        // Face state management
+        const face = document.getElementById('face');
+        const statusText = document.getElementById('status-text');
+        let currentMood = 'default';
+        let subagentsActive = false;
+        
+        // Set the mood/expression
+        function setMood(mood) {
+            // Remove previous mood classes
+            face.className = 'face';
+            
+            // Add new mood class
+            face.classList.add(mood);
+            currentMood = mood;
+            
+            // Keep subagents if they were active
+            if (subagentsActive) {
+                face.classList.add('subagent-active');
+            }
+            
+            // Update status text
+            updateStatusText();
+        }
+        
+        // Toggle subagents
+        function toggleSubagents() {
+            subagentsActive = !subagentsActive;
+            
+            if (subagentsActive) {
+                face.classList.add('subagent-active');
+            } else {
+                face.classList.remove('subagent-active');
+            }
+            
+            updateStatusText();
+        }
+        
+        // Update the status text based on current mood and subagents
+        function updateStatusText() {
+            let status = "";
+            
+            switch(currentMood) {
+                case 'default':
+                    status = "Active";
+                    break;
+                case 'happy':
+                    status = "Happy";
+                    break;
+                case 'thinking':
+                    status = "Thinking";
+                    break;
+                case 'working':
+                    status = "Working";
+                    break;
+                case 'confused':
+                    status = "Confused";
+                    break;
+                case 'excited':
+                    status = "Excited";
+                    break;
+            }
+            
+            if (subagentsActive) {
+                status += " with sub-agents";
+            }
+            
+            statusText.textContent = status;
+        }
+        
+        // Random eye movement for realism
+        function randomEyeMovement() {
+            const pupils = document.querySelectorAll('.pupil');
+            
+            // Only apply random movement when not in a specific mood
+            if (currentMood === 'default') {
+                const offsetX = (Math.random() - 0.5) * 20;
+                const offsetY = (Math.random() - 0.5) * 20;
+                
+                pupils.forEach(pupil => {
+                    pupil.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+                });
+                
+                // Reset after a while
+                setTimeout(() => {
+                    if (currentMood === 'default') {
+                        pupils.forEach(pupil => {
+                            pupil.style.transform = 'translate(-50%, -50%)';
+                        });
+                    }
+                }, 1000);
+            }
+        }
+        
+        // Start with a default mood
+        setMood('default');
+        
+        // Add random eye movements for realism
+        setInterval(randomEyeMovement, 3000);
+    </script>
+</body>
+</html>

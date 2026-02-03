@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboboogie Avatar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a472a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .avatar-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .face {
+            width: 100%;
+            height: 100%;
+            background-color: #90EE90;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .eyes {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .eye {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid #2d5a3d;
+        }
+        
+        .pupil {
+            width: 15px;
+            height: 15px;
+            background-color: #2d5a3d;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .mouth {
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 40px;
+            border-radius: 50%;
+            border-bottom: 5px solid #2d5a3d;
+        }
+        
+        .antenna {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background-color: #2d5a3d;
+            border-radius: 5px;
+        }
+        
+        .antenna-ball {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px 1px rgba(231, 76, 60, 0.5); }
+            100% { box-shadow: 0 0 20px 4px rgba(231, 76, 60, 0.8); }
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+        
+        .thinking .pupil {
+            animation: thinking 1.5s infinite;
+        }
+        
+        @keyframes thinking {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(0); }
+            25% { transform: translate(-50%, -50%) rotate(90deg) translateX(2px); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) translateX(0); }
+            75% { transform: translate(-50%, -50%) rotate(270deg) translateX(2px); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(0); }
+        }
+        
+        .working .antenna-ball {
+            animation: working 0.7s infinite alternate;
+            background-color: #f39c12;
+        }
+        
+        @keyframes working {
+            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 5px 1px rgba(243, 156, 18, 0.5); }
+            100% { transform: translateX(-50%) scale(1.3); box-shadow: 0 0 20px 4px rgba(243, 156, 18, 0.8); }
+        }
+        
+        .excited .mouth {
+            height: 50px;
+            width: 90px;
+            border-radius: 50%;
+        }
+        
+        .excited .eye {
+            height: 35px;
+        }
+        
+        .excited .antenna-ball {
+            background-color: #3498db;
+            animation: excited 0.5s infinite alternate;
+        }
+        
+        @keyframes excited {
+            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 5px 1px rgba(52, 152, 219, 0.5); }
+            100% { transform: translateX(-50%) scale(1.5); box-shadow: 0 0 20px 4px rgba(52, 152, 219, 0.8); }
+        }
+        
+        .subagent .face {
+            background-color: #9b59b6;
+        }
+        
+        .subagent .antenna-ball {
+            background-color: #8e44ad;
+            animation: subagent 1s infinite alternate;
+        }
+        
+        @keyframes subagent {
+            0% { transform: translateX(-50%) scale(1) rotate(0deg); box-shadow: 0 0 5px 1px rgba(142, 68, 173, 0.5); }
+            100% { transform: translateX(-50%) scale(1.2) rotate(180deg); box-shadow: 0 0 20px 4px rgba(142, 68, 173, 0.8); }
+        }
+        
+        .status-display {
+            background-color: #2d5a3d;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 Roboboogie Avatar Demo</h1>
+    
+    <div class="avatar-container">
+        <div class="face" id="robo-face">
+            <div class="antenna"></div>
+            <div class="antenna-ball"></div>
+            <div class="eyes">
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+    
+    <div class="status-display" id="status">Idle</div>
+    
+    <div class="controls">
+        <button id="idle-btn">Idle</button>
+        <button id="thinking-btn">Thinking</button>
+        <button id="working-btn">Working</button>
+        <button id="excited-btn">Excited</button>
+        <button id="subagent-btn">Subagent Mode</button>
+    </div>
+    
+    <script>
+        // Get elements
+        const face = document.getElementById('robo-face');
+        const status = document.getElementById('status');
+        const idleBtn = document.getElementById('idle-btn');
+        const thinkingBtn = document.getElementById('thinking-btn');
+        const workingBtn = document.getElementById('working-btn');
+        const excitedBtn = document.getElementById('excited-btn');
+        const subagentBtn = document.getElementById('subagent-btn');
+        
+        // Event listeners
+        idleBtn.addEventListener('click', () => {
+            resetState();
+            status.textContent = 'Idle';
+        });
+        
+        thinkingBtn.addEventListener('click', () => {
+            resetState();
+            face.classList.add('thinking');
+            status.textContent = 'Thinking...';
+        });
+        
+        workingBtn.addEventListener('click', () => {
+            resetState();
+            face.classList.add('working');
+            status.textContent = 'Working on task';
+        });
+        
+        excitedBtn.addEventListener('click', () => {
+            resetState();
+            face.classList.add('excited');
+            status.textContent = 'Excited! Found something cool!';
+        });
+        
+        subagentBtn.addEventListener('click', () => {
+            resetState();
+            face.classList.add('subagent');
+            status.textContent = 'Running subagent';
+        });
+        
+        function resetState() {
+            face.className = 'face';
+        }
+    </script>
+</body>
+</html>

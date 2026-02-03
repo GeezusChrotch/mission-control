@@ -1,0 +1,140 @@
+#!/bin/bash
+# music-play - Play Apple Music via Airfoil to any device
+# Usage: music-play "Artist Name" [--device "Den"]
+#        music-play --device "Den" --all
+
+set -e
+
+show_help() {
+    cat << EOF
+music-play - Play Apple Music via Airfoil
+
+Usage:
+  music-play "Arcade Fire"              # Play artist in Den
+  music-play "Arcade Fire" --device "Lounge"
+  music-play --all                       # Play to ALL speakers
+  music-play --device "Den"              # Just set output
+  music-play --list-devices              # List Airfoil speakers
+  music-play --now                       # What's playing
+  music-play --toggle                    # Play/pause
+  music-play --next                      # Skip
+
+EOF
+}
+
+# List Airfoil speakers
+list_devices() {
+    osascript -e 'tell application "Airfoil" to name of every speaker' 2>/dev/null || echo "Airfoil not running"
+}
+
+# Connect to speaker
+connect_speaker() {
+    local speaker="$1"
+    osascript -e "tell application \"Airfoil\" to connect to speaker \"$speaker\"" 2>/dev/null
+}
+
+# Play to ALL speakers
+play_all() {
+    osascript <<'EOF'
+tell application "Airfoil"
+    set allSpeakers to every speaker
+    repeat with s in allSpeakers
+        try
+            connect to s
+        end try
+    end repeat
+end tell
+EOF
+}
+
+# Play content - robust version
+play_content() {
+    local name="$1"
+    local device="$2"
+
+    # Play via Music app
+    osascript <<EOF
+tell application "Music"
+    try
+        set searchResults to (tracks of library playlist 1 whose artist contains "$name")
+        if (count of searchResults) > 0 then
+            play (item 1 of searchResults)
+        end if
+    end try
+end tell
+EOF
+
+    # Small delay
+    sleep 0.5
+
+    # Connect to Airfoil
+    connect_speaker "$device"
+}
+
+# Main
+if [ $# -eq 0 ]; then
+    show_help
+    exit 0
+fi
+
+DEVICE="Den"
+PLAY_ALL=false
+NAME=""
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --help|-h)
+            show_help
+            exit 0
+            ;;
+        --list-devices|-l)
+            list_devices
+            exit 0
+            ;;
+        --now)
+            osascript -e 'tell application "Music" to name of current track' 2>/dev/null || echo "Nothing playing"
+            exit 0
+            ;;
+        --toggle)
+            osascript -e 'tell application "Music" to playpause'
+            echo "Toggled"
+            exit 0
+            ;;
+        --next)
+            osascript -e 'tell application "Music" to next track'
+            echo "Next"
+            exit 0
+            ;;
+        --prev)
+            osascript -e 'tell application "Music" to previous track'
+            echo "Previous"
+            exit 0
+            ;;
+        --all|-a)
+            PLAY_ALL=true
+            ;;
+        --device|-d)
+            DEVICE="$2"
+            shift
+            ;;
+        -*)
+            echo "Unknown: $1"
+            exit 1
+            ;;
+        *)
+            NAME="$1"
+            ;;
+    esac
+    shift
+done
+
+if [ "$PLAY_ALL" = true ]; then
+    play_all
+    echo "Playing to all speakers"
+elif [ -n "$NAME" ]; then
+    play_content "$NAME" "$DEVICE"
+    echo "Playing: $NAME on $DEVICE"
+else
+    connect_speaker "$DEVICE"
+    echo "Output: $DEVICE"
+fi

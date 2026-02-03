@@ -1,3 +1,33 @@
 node_modules/
 .DS_Store
 *.log
+
+# Secrets and sensitive data
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.crt
+secrets/
+credentials/
+
+# OpenClaw sensitive paths
+.openclaw/
+config.json
+*token*
+*secret*
+
+# Runtime data that shouldn't be shared
+data/*.json
+!data/.gitkeep
+memory/*.json
+*.pid
+*.sock
+
+# Local development
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

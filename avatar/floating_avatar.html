@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboboogie Floating Avatar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .avatar-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 10px;
+        }
+        
+        .face {
+            width: 100%;
+            height: 100%;
+            background-color: #90EE90;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: background-color 0.5s;
+        }
+        
+        .eyes {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .eye {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid #2d5a3d;
+            transition: height 0.3s;
+        }
+        
+        .pupil {
+            width: 15px;
+            height: 15px;
+            background-color: #2d5a3d;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .mouth {
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 40px;
+            border-radius: 50%;
+            border-bottom: 5px solid #2d5a3d;
+            transition: height 0.3s, width 0.3s;
+        }
+        
+        .antenna {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background-color: #2d5a3d;
+            border-radius: 5px;
+        }
+        
+        .antenna-ball {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px 1px rgba(231, 76, 60, 0.5); }
+            100% { box-shadow: 0 0 20px 4px rgba(231, 76, 60, 0.8); }
+        }
+        
+        /* States */
+        
+        .thinking .pupil {
+            animation: thinking 1.5s infinite;
+        }
+        
+        @keyframes thinking {
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(0); }
+            25% { transform: translate(-50%, -50%) rotate(90deg) translateX(2px); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) translateX(0); }
+            75% { transform: translate(-50%, -50%) rotate(270deg) translateX(2px); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(0); }
+        }
+        
+        .working .antenna-ball {
+            animation: working 0.7s infinite alternate;
+            background-color: #f39c12;
+        }
+        
+        @keyframes working {
+            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 5px 1px rgba(243, 156, 18, 0.5); }
+            100% { transform: translateX(-50%) scale(1.3); box-shadow: 0 0 20px 4px rgba(243, 156, 18, 0.8); }
+        }
+        
+        .excited .mouth {
+            height: 50px;
+            width: 90px;
+            border-radius: 50%;
+        }
+        
+        .excited .eye {
+            height: 35px;
+        }
+        
+        .excited .antenna-ball {
+            background-color: #3498db;
+            animation: excited 0.5s infinite alternate;
+        }
+        
+        @keyframes excited {
+            0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 5px 1px rgba(52, 152, 219, 0.5); }
+            100% { transform: translateX(-50%) scale(1.5); box-shadow: 0 0 20px 4px rgba(52, 152, 219, 0.8); }
+        }
+        
+        .subagent .face {
+            background-color: #9b59b6;
+        }
+        
+        .subagent .antenna-ball {
+            background-color: #8e44ad;
+            animation: subagent 1s infinite alternate;
+        }
+        
+        @keyframes subagent {
+            0% { transform: translateX(-50%) scale(1) rotate(0deg); box-shadow: 0 0 5px 1px rgba(142, 68, 173, 0.5); }
+            100% { transform: translateX(-50%) scale(1.2) rotate(180deg); box-shadow: 0 0 20px 4px rgba(142, 68, 173, 0.8); }
+        }
+        
+        .status-display {
+            display: none; /* Hidden in floating mode */
+        }
+    </style>
+</head>
+<body>
+    <div class="avatar-container">
+        <div class="face" id="robo-face">
+            <div class="antenna"></div>
+            <div class="antenna-ball"></div>
+            <div class="eyes">
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+    
+    <script>
+        const face = document.getElementById('robo-face');
+        
+        // Function to set the state
+        function setState(state) {
+            resetState();
+            
+            switch(state) {
+                case 'idle':
+                    // Default state
+                    break;
+                case 'thinking':
+                    face.classList.add('thinking');
+                    break;
+                case 'working':
+                    face.classList.add('working');
+                    break;
+                case 'excited':
+                    face.classList.add('excited');
+                    break;
+                case 'subagent':
+                    face.classList.add('subagent');
+                    break;
+                default:
+                    // Default to idle
+                    break;
+            }
+        }
+        
+        function resetState() {
+            face.className = 'face';
+        }
+        
+        // Initialize to idle state
+        setState('idle');
+        
+        // For testing - cycle through states
+        let testMode = false;
+        
+        if (testMode) {
+            const states = ['idle', 'thinking', 'working', 'excited', 'subagent'];
+            let currentStateIndex = 0;
+            
+            setInterval(() => {
+                setState(states[currentStateIndex]);
+                currentStateIndex = (currentStateIndex + 1) % states.length;
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

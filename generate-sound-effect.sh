@@ -12,7 +12,8 @@ fi
 PROMPT="$1"
 OUTPUT_FILE="$2"
 DURATION="$3"
-API_KEY="sk_b415fc3ebc3cdacbcef90b4c68f55424c515648c2b6fd66c"
+# API Key - prefer env var, fallback to config
+API_KEY="${ELEVENLABS_API_KEY:-sk_b415fc3ebc3cdacbcef90b4c68f55424c515648c2b6fd66c}"
 DOWNLOADS_DIR="/Users/Josh/Library/CloudStorage/Dropbox/- LMT Audio/- Generated SFX"
 OUTPUT_PATH="$DOWNLOADS_DIR/$OUTPUT_FILE"
 

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "skills": {
+    "browser-use-api": {
+      "version": "1.0.1",
+      "installedAt": 1769668015485
+    },
+    "clippy": {
+      "version": "1.2.0",
+      "installedAt": 1769668488341
+    },
+    "shortcuts-skill": {
+      "version": "0.1.0",
+      "installedAt": 1769703944496
+    },
+    "clawdbot-skill-homebridge": {
+      "version": "0.1.0",
+      "installedAt": 1769704060970
+    },
+    "self-improving-agent": {
+      "version": "1.0.2",
+      "installedAt": 1769736251970
+    },
+    "perplexity": {
+      "version": "1.0.0",
+      "installedAt": 1769758252795
+    },
+    "outlook": {
+      "version": "1.3.0",
+      "installedAt": 1769783862967
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1769873655805
+    },
+    "apple-media": {
+      "version": "1.0.0",
+      "installedAt": 1769931816713
+    },
+    "mcp-applemusic": {
+      "version": "1.0.6",
+      "installedAt": 1769933766929
+    },
+    "mission-control": {
+      "version": "2.0.0",
+      "installedAt": 1770077741540
+    }
+  }
+}

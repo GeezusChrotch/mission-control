@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboboogie Automation To Do</title>
+    <link rel="stylesheet" href="kanban.css">
+</head>
+<body>
+    <header>
+        <h1>🤖 Roboboogie Automation To Do</h1>
+        <div class="header-buttons">
+            <button id="add-card-btn">+ Add Card</button>
+            <button id="save-board-btn">Save Board</button>
+            <button id="load-board-btn">Load Board</button>
+        </div>
+    </header>
+    
+    <div class="board-container">
+        <div class="column" id="suggestions-column">
+            <h2>Suggestions</h2>
+            <div class="card-container" data-column="suggestions"></div>
+        </div>
+        
+        <div class="column" id="todo-column">
+            <h2>To Do</h2>
+            <div class="card-container" data-column="todo"></div>
+        </div>
+        
+        <div class="column" id="inprogress-column">
+            <h2>In Progress</h2>
+            <div class="card-container" data-column="inprogress"></div>
+        </div>
+        
+        <div class="column" id="blocked-column">
+            <h2>Blocked</h2>
+            <div class="card-container" data-column="blocked"></div>
+        </div>
+        
+        <div class="column" id="done-column">
+            <h2>Done</h2>
+            <div class="card-container" data-column="done"></div>
+        </div>
+    </div>
+
+    <!-- Card Template (Hidden) -->
+    <template id="card-template">
+        <div class="card" draggable="true">
+            <div class="card-header">
+                <h3 class="card-title"></h3>
+                <div class="card-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+            <p class="card-description"></p>
+            <div class="card-timestamps">
+                <!-- Timestamps will be added here by JS -->
+            </div>
+        </div>
+    </template>
+
+    <!-- Modal for Adding/Editing Cards -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Add New Card</h2>
+            <form id="card-form">
+                <div class="form-group">
+                    <label for="card-title-input">Title:</label>
+                    <input type="text" id="card-title-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-description-input">Description:</label>
+                    <textarea id="card-description-input" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="card-column-select">Column:</label>
+                    <select id="card-column-select">
+                        <option value="suggestions">Suggestions</option>
+                        <option value="todo">To Do</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="blocked">Blocked</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+                <button type="submit" id="save-card-btn">Save Card</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- File Input (Hidden) -->
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+
+    <script src="kanban.js"></script>
+</body>
+</html>
