@@ -60,7 +60,8 @@
           "timestamp": "2026-01-01T00:00:00Z"
         }
       ],
-      "createdAt": "2026-01-01T00:00:00Z"
+      "createdAt": "2026-01-01T00:00:00Z",
+      "sortOrder": 0
     },
     {
       "id": "guide_user",
@@ -247,7 +248,8 @@
           "timestamp": "2026-01-01T00:00:00Z"
         }
       ],
-      "createdAt": "2026-01-01T00:00:01Z"
+      "createdAt": "2026-01-01T00:00:01Z",
+      "sortOrder": 0
     },
     {
       "id": "task_example",
@@ -584,5 +586,5 @@
       "time": "just now"
     }
   ],
-  "lastUpdated": "2026-02-03T05:58:45.506Z"
+  "lastUpdated": "2026-02-03T06:13:44.943Z"
 }
