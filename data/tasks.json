@@ -379,7 +379,7 @@
       "id": "suggestion-1",
       "title": "🤖 Auto-OpenRouter Balance Check",
       "description": "Check OpenRouter API balance daily and log if below threshold. Store in /Users/Josh/clawd/.openrouter_balance for tracking trends over time.\n\n📅 Created: Jan 31, 11:30 PM",
-      "status": "backlog",
+      "status": "in_progress",
       "project": "suggestions",
       "tags": [
         "suggestion"
