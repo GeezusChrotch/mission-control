@@ -7,8 +7,8 @@ Generate and send a comprehensive morning briefing to iMessage (jbessom@me.com) 
 1. **Weather** - Open-Meteo API for Buena Park, CA
 2. **Work Email** - Clippy (Outlook) unread count + recent subjects
 3. **Personal Email** - gog (Gmail) unread count + recent subjects  
-4. **Work Calendar** - Clippy (Outlook) today's events
-5. **Personal Calendar** - gog (Google Calendar) today's events
+4. **Work Calendars** - gog Google Calendar: W2W Schedule + LMT VOps
+5. **Personal Calendars** - gog (Google Calendar) Josh + Family calendars
 6. **News** - blogwatcher recent articles
 7. **Tasks** - Mission Control due/overdue tasks
 8. **OpenRouter Usage** - Daily API costs and usage stats
@@ -24,14 +24,24 @@ Today: High XX°F / Low XX°F
 
 📅 TODAY'S SCHEDULE
 🎭 WORK:
-  • [Outlook events]
+  • W2W Schedule: [events or "No events"]
+  • LMT VOps: [events or "No events"]
 
 🏠 PERSONAL:
-  • [Google Calendar events]
+  • Josh:
+    [events with time + summary, or "No events"]
+  • Family:
+    [events with time + summary, or "No events"]
 
 ✉️ EMAIL SUMMARY
-📧 WORK OUTLOOK: X unread
-📧 PERSONAL GMAIL: X unread
+📧 WORK OUTLOOK (X unread):
+  1. [sender]: [subject]
+  2. [sender]: [subject]
+  ... (up to 10)
+📧 PERSONAL GMAIL (X unread):
+  1. [sender]: [subject]
+  2. [sender]: [subject]
+  ... (up to 10)
 
 🎯 MISSION CONTROL
 [Tasks in progress or due today]
@@ -45,19 +55,21 @@ Yesterday's costs: $X.XX
 
 ---
 Last updated: [time]
-🤖 From Roboboogie
+🤖 From Mr. Clawncy
+
+Note: For iMessage, include "—Mr. Clawncy 🤖\n\n" at the start of the message body
 ```
 
 ## Tools to Use
 
-- `curl` for weather API
-- `clippy mail --unread --json` for work email
-- `clippy calendar --json` for work calendar
-- `gog gmail search "is:unread" --json` for personal email
-- `gog calendar events primary --from TODAY --to TODAY --json` for personal calendar
-- `blogwatcher articles --limit 5` for news
-- `cat /Users/Josh/clawd/data/tasks.json` for tasks
-- OpenRouter API key from `~/.openclaw/config.json` or env - use curl to fetch usage: `curl -s "https://openrouter.ai/api/v1/credits" -H "Authorization: Bearer $OPENROUTER_API_KEY"`
+- **Weather**: `curl` with `&forecast_days=2&temperature_unit=fahrenheit` for today + tomorrow in °F
+- **Work Email**: `clippy mail --unread --json | jq -r '.emails[:10] | .[] | "\(.fromName): \(.subject)"'`
+- **Work Calendars**: `gog calendar events 590pktrelg75lbm4074hif6ad8@group.calendar.google.com --from TODAY --to TOMORROW | tail -n +2` (W2W) AND `gog calendar events be8908a17c93a4f56d328554f4b3cdabc9be9c6ec6291f90b636da30d1c51da6@group.calendar.google.com --from TODAY --to TOMORROW | tail -n +2` (LMT VOps)
+- **Personal Email**: `gog gmail search "is:unread" --json | jq -r '.threads[:10] | .[] | "\(.from): \(.subject)"'`
+- **Personal Calendars**: `gog calendar events jbessom@gmail.com --from TODAY --to TOMORROW | tail -n +2` (Josh) AND `gog calendar events 11db48b25a66a05addce37f816e1cfeb215dcf8be41bb602d4cb76bd4340566c@group.calendar.google.com --from TODAY --to TOMORROW | tail -n +2` (Family)
+- **News**: `python3 /Users/Josh/clawd/morning-rss.py` (Democracy Now, LA Times, The Intercept)
+- **Tasks**: `cat /Users/Josh/clawd/data/tasks.json` (filter for status: in-progress, todo, not "permanent")
+- **OpenRouter Costs**: Extract key from `~/.openclaw/openclaw.json` auth profiles, then `curl -s "https://openrouter.ai/api/v1/auth/key" -H "Authorization: Bearer $KEY"`
 
 ## Instructions
 

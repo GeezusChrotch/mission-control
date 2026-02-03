@@ -11,7 +11,11 @@ import json
 
 # Configuration
 DOWNLOADS_DIR = "/Users/Josh/Library/CloudStorage/Dropbox/- LMT Audio/- Generated SFX"
-ELEVENLABS_API_KEY = "sk_b415fc3ebc3cdacbcef90b4c68f55424c515648c2b6fd66c"
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY")
+if not ELEVENLABS_API_KEY:
+    print("❌ ELEVENLABS_API_KEY environment variable not set")
+    print("   Set it with: export ELEVENLABS_API_KEY='your-api-key'")
+    sys.exit(1)
 ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1/text-to-sound-effects/convert"
 
 def generate_sound_effect(prompt, output_path, duration=None, loop=False):

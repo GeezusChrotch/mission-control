@@ -13,8 +13,13 @@ SOUND_EFFECTS=(
     # "footsteps on gravel|footsteps_gravel.mp3|5.0"
 )
 
-# Configuration - prefer env var, fallback to config
-API_KEY="${ELEVENLABS_API_KEY:-sk_b415fc3ebc3cdacbcef90b4c68f55424c515648c2b6fd66c}"
+# Configuration - require env var
+API_KEY="${ELEVENLABS_API_KEY}"
+if [ -z "$API_KEY" ]; then
+    echo "❌ ELEVENLABS_API_KEY environment variable not set"
+    echo "   Set it with: export ELEVENLABS_API_KEY='your-api-key'"
+    exit 1
+fi
 DOWNLOADS_DIR="/Users/Josh/Library/CloudStorage/Dropbox/- LMT Audio/- Generated SFX"
 
 # Ensure downloads directory exists

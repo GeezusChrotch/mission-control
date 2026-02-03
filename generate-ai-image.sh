@@ -26,7 +26,13 @@ echo "   Filename: $FILENAME"
 mkdir -p "$AI_IMAGES_DIR"
 
 # Generate image directly to AI Images folder
-GEMINI_API_KEY="${GEMINI_API_KEY:-AIzaSyCsBpd8HQEve42Ojr2jBPS7GQEmvnRJhLo}" uv run /usr/local/lib/node_modules/clawdbot/skills/nano-banana-pro/scripts/generate_image.py \
+if [ -z "$GEMINI_API_KEY" ]; then
+    echo "❌ GEMINI_API_KEY environment variable not set"
+    echo "   Set it with: export GEMINI_API_KEY='your-api-key'"
+    exit 1
+fi
+
+uv run /usr/local/lib/node_modules/clawdbot/skills/nano-banana-pro/scripts/generate_image.py \
     --prompt "$PROMPT" \
     --filename "$FILENAME" \
     --resolution "$RESOLUTION"
