@@ -1,0 +1,494 @@
+{
+  "tasks": [
+    {
+      "id": "card-1",
+      "title": "Fix weather formatting",
+      "description": "Use plain text for clean Telegram output in morning briefing. Added 2-day forecast with detailed hourly breakdown.\n\n\ud83d\udcc5 Created: Jan 30, 3:30 PM\n\ud83d\udd04 Status: Done (Jan 31, 10:40 AM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-30T15:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-30T15:30:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-31T09:15:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-31T10:40:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-2",
+      "title": "Add OpenRouter alerts",
+      "description": "Notify if balance drops below $40 in briefing\n\n\ud83d\udcc5 Created: Jan 30, 4:45 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:15 PM)\n\nAdded balance check section to morning-briefing.sh. Shows current balance and alerts with \u26a0\ufe0f icon if below $40. Requires OPENROUTER_API_KEY.",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-30T16:45:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-30T16:45:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-31T11:06:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-02T12:15:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-4",
+      "title": "Morning briefing refinements",
+      "description": "Complete rewrite with proper formatting, news articles (3 per source with summaries), clear visual separation between sections, consistent layout\n\n\ud83d\udcc5 Created: Jan 30, 6:15 PM\n\ud83d\udd04 Status: Done (Jan 31, 10:40 AM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-30T18:15:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-30T18:15:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-31T08:30:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-31T10:40:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-6",
+      "title": "Switch to Grok for cost savings",
+      "description": "Reduced API spend from $50/day to ~$10-15/month\n\n\ud83d\udcc5 Created: Jan 28, 2:20 PM\n\ud83d\udd04 Status: Done (Jan 29, 9:10 AM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-28T14:20:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-28T14:20:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-28T16:45:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-29T09:10:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-7",
+      "title": "Setup Clippy keepalive service",
+      "description": "Running as launchd service, refreshes every 10 min\n\n\ud83d\udcc5 Created: Jan 29, 11:30 AM\n\ud83d\udd04 Status: Done (Jan 29, 3:45 PM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-29T11:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-29T11:30:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-29T13:20:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-29T15:45:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-8",
+      "title": "Configure work/personal email summaries",
+      "description": "Work via Clippy, personal via gog - both working in briefings\n\n\ud83d\udcc5 Created: Jan 30, 10:15 AM\n\ud83d\udd04 Status: Done (Jan 30, 2:45 PM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-30T10:15:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-30T10:15:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-30T11:30:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-30T14:45:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-9",
+      "title": "sound effects",
+      "description": "Generated via ElevenLabs: lion_roar.mp3, castle_gate_close.mp3, rattling_metal_sheet.mp3 - saved to Dropbox/- LMT Audio/- Generated SFX\n\n\ud83d\udcc5 Created: Jan 29, 4:30 PM\n\ud83d\udd04 Status: Done (Jan 29, 7:40 PM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-29T16:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-29T16:30:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-29T17:15:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-29T19:40:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-10",
+      "title": "test",
+      "description": "card test\n\n\ud83d\udcc5 Created: Jan 31, 11:01 AM\n\ud83d\udd04 Status: Done (Jan 31, 11:30 PM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-31T11:01:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-01-31T11:01:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-01-31T11:06:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-01-31T23:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-1",
+      "title": "\ud83e\udd16 Auto-OpenRouter Balance Check",
+      "description": "Check OpenRouter API balance daily and log if below threshold. Store in /Users/Josh/clawd/.openrouter_balance for tracking trends over time.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
+      "status": "backlog",
+      "priority": "medium",
+      "createdAt": "2026-01-31T23:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T23:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-2",
+      "title": "\ud83d\udcca Daily Cost Summary Script",
+      "description": "Create a script that calculates daily API spend across all providers and logs it to a file. Run via cron at midnight.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
+      "status": "backlog",
+      "priority": "medium",
+      "createdAt": "2026-01-31T23:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T23:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-4",
+      "title": "\ud83d\udcdd Auto-Daily Summary",
+      "description": "Create a script that summarizes what was accomplished each day based on kanban card changes and saves to memory/YYYY-MM-DD.md automatically.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
+      "status": "backlog",
+      "priority": "medium",
+      "createdAt": "2026-01-31T23:30:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T23:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "todo-1",
+      "title": "\ud83d\udcca Daily Cost Summary Script",
+      "description": "Created script at /Users/Josh/clawd/scripts/daily-cost-summary.sh that logs OpenRouter balance and estimates daily spend. Ready for cron setup.\n\n\ud83d\udcc5 Created: Jan 31, 11:35 PM\n\ud83d\udd04 Status: Done (Jan 31, 11:40 PM)",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-01-31T23:35:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-01-31T23:30:00-08:00"
+        },
+        {
+          "from": "suggestions",
+          "to": "todo",
+          "timestamp": "2026-01-31T23:35:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-01-31T23:40:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "info-1",
+      "title": "\u2705 Apple TVs Successfully Paired!",
+      "description": "Lounge Apple TV - Fully operational\nDen Apple TV - Fully operational\n\nBoth can now be controlled via atvremote.\n\n\ud83d\udcc5 Created: Feb 1, 12:13 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T00:13:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "done",
+          "timestamp": "2026-02-01T00:13:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-12",
+      "title": "Fix cron PATH issues",
+      "description": "Cron couldn't find node, gog, clippy. Added full PATH to script and crontab.\n\n\ud83d\udcc5 Created: Feb 01, 11:33 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T11:33:09-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-13",
+      "title": "Fix weather parsing (0\u00b0F bug)",
+      "description": "Weather API returned wrong value. Fixed grep regex to use tail -1.\n\n\ud83d\udcc5 Created: Feb 01, 11:33 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T11:33:09-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-14",
+      "title": "Fix Outlook email parsing",
+      "description": "Script regex didn't match clippy output format. Fixed to use grep -E '\\[ [0-9\\]'.\n\n\ud83d\udcc5 Created: Feb 01, 11:33 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T11:33:09-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-15",
+      "title": "Fix Gmail working",
+      "description": "gog not in cron PATH. Added /Users/Josh/.bun/bin to PATH.\n\n\ud83d\udcc5 Created: Feb 01, 11:33 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T11:33:09-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-16",
+      "title": "Create music-play script",
+      "description": "Wrapper script to play Apple Music via Airfoil to any speaker.\n\n\ud83d\udcc5 Created: Feb 01, 11:33 AM",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T11:33:09-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "done",
+          "timestamp": "2026-02-01T11:33:09-08:00"
+        }
+      ]
+    },
+    {
+      "id": "idea-2",
+      "title": "\ud83d\udca1 Meeting Prep Agent",
+      "description": "Given a meeting title/time, research attendees via LinkedIn/GitHub, check recent emails, and generate a prep brief automatically.\n\n\ud83d\udcc5 Created: Feb 1, 10:23 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:18 PM)\n\nCreated /Users/Josh/clawd/scripts/meeting-prep.sh. Usage: ./meeting-prep.sh \"Meeting Title\" \"YYYY-MM-DD HH:MM\". Checks emails, generates prep brief.",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T22:23:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T22:23:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-02T12:18:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-02T12:20:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "idea-3",
+      "title": "\ud83d\udca1 Smart Notification Hub",
+      "description": "Aggregate email, calendar, Slack/Telegram mentions into one daily digest. Prioritize by sender/keywords.\n\n\ud83d\udcc5 Created: Feb 1, 10:23 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:25 PM)\n\nCreated /Users/Josh/clawd/scripts/notification-hub.sh. Aggregates Gmail, Outlook, calendar. Shows priority items (meetings in next 4h).",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T22:23:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T22:23:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-02T12:22:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-02T12:25:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "idea-4",
+      "title": "\ud83d\udca1 Daily Goal & Habit Tracker",
+      "description": "Simple CLI to set daily goals, track progress, and build habits. Visual progress bars, streak tracking.\n\n\ud83d\udcc5 Created: Feb 1, 10:23 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:30 PM)\n\nCreated /Users/Josh/clawd/scripts/habit-tracker.sh. Supports add/list/done/check commands. Tracks streaks, visual progress bars, stores in ~/.habits.json.",
+      "status": "done",
+      "priority": "medium",
+      "createdAt": "2026-02-01T22:23:00-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-01T22:23:00-08:00"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-02T12:28:00-08:00"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-02T12:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "guide_onboarding",
+      "title": "\ud83d\ude80 Set Up Mission Control Remote Access",
+      "description": "Follow these steps to enable remote access to your Kanban board via Tailscale Funnel.",
+      "status": "backlog",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Fix Tailscale version mismatch (update or reinstall)",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Enable Tailscale Funnel: tailscale funnel 18789",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Configure GitHub webhook for task updates",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Test remote access from another device",
+          "done": false
+        }
+      ],
+      "createdAt": "2026-02-02T16:15:00-08:00"
+    }
+  ]
+}
