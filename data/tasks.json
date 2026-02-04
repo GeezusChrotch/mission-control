@@ -252,36 +252,6 @@
       "sortOrder": 0
     },
     {
-      "id": "task_example",
-      "title": "Example Task — Delete me when ready!",
-      "description": "This is an example of what a real task looks like. Feel free to edit or delete it.\n\n**Good task descriptions include:**\n- What needs to be done\n- Why it matters\n- Any constraints or requirements\n- Links to relevant resources",
-      "status": "backlog",
-      "project": "default",
-      "tags": [
-        "example"
-      ],
-      "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "First step of the task",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Second step",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Final step",
-          "done": false
-        }
-      ],
-      "priority": "low",
-      "comments": [],
-      "createdAt": "2026-01-01T00:00:02Z"
-    },
-    {
       "id": "card-1",
       "title": "Fix weather formatting",
       "description": "Use plain text for clean Telegram output in morning briefing. Added 2-day forecast with detailed hourly breakdown.\n\n📅 Created: Jan 30, 3:30 PM\n🔄 Status: Done (Jan 31, 10:40 AM)",
@@ -586,5 +556,5 @@
       "time": "just now"
     }
   ],
-  "lastUpdated": "2026-02-03T06:13:44.943Z"
+  "lastUpdated": "2026-02-04T22:00:22.842Z"
 }
