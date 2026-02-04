@@ -47,4 +47,20 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+## OpenClaw Gateway Device Pairing
+
+When connecting a new device to the Control UI via Tailscale:
+
+```bash
+# See pending pairing requests
+openclaw devices list
+
+# Approve a device
+openclaw devices approve <request-id>
+```
+
+Each device only needs approval once. After pairing, it reconnects automatically.
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
