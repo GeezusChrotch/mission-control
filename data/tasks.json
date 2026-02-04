@@ -558,7 +558,8 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-04T13:30:00Z",
-      "comments": []
+      "comments": [],
+      "subtasks": []
     },
     {
       "id": "active-2",
@@ -573,7 +574,8 @@
       ],
       "priority": "medium",
       "createdAt": "2026-02-04T13:35:00Z",
-      "comments": []
+      "comments": [],
+      "subtasks": []
     },
     {
       "id": "active-3",
@@ -588,7 +590,8 @@
       ],
       "priority": "high",
       "createdAt": "2026-02-04T13:38:00Z",
-      "comments": []
+      "comments": [],
+      "subtasks": []
     }
   ],
   "projects": [
