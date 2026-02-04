@@ -549,7 +549,7 @@
       "id": "active-1",
       "title": "🌅 Morning Briefing - Live & Running",
       "description": "Comprehensive 6am briefing with weather, calendars (all 8), emails, packages, tasks, news. Running daily via cron.\n\nStatus: Operational\nLast tested: Feb 4, 2026\nModel: Haiku for cron jobs",
-      "status": "in-progress",
+      "status": "in_progress",
       "project": "automation",
       "tags": [
         "briefing",
