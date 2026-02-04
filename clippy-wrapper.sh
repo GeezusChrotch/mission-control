@@ -21,6 +21,7 @@ if [ $# -eq 0 ]; then
     echo "  $0 mail --unread          # Unread emails"
     echo "  $0 calendar               # Today's calendar"
     echo "  $0 calendar --week        # Week view"
+    echo "  $0 keepalive --interval 600  # Keepalive every 10 minutes"
     exit 1
 fi
 
