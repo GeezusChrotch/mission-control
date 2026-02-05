@@ -9,14 +9,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 25%, #3d6b4f 50%, #2d5a3d 75%, #1a472a 100%);
+    background: #000000;
     min-height: 100vh;
 }
 
 /* Header */
 header {
-    background: linear-gradient(90deg, #0d2818 0%, #1a472a 50%, #0d2818 100%);
-    color: #90EE90;
+    background: #000000;
+    color: #ff6600;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -27,6 +27,7 @@ header {
 header h1 {
     font-size: 1.8rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ff6600;
 }
 
 .header-buttons {
@@ -39,7 +40,7 @@ button {
     padding: 8px 16px;
     border-radius: 6px;
     border: none;
-    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #cc5200 100%);
     color: white;
     font-weight: 600;
     transition: all 0.2s;
@@ -49,15 +50,15 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    background: linear-gradient(135deg, #cc5200 0%, #993d00 100%);
 }
 
 #add-card-btn {
-    background: linear-gradient(135deg, #58d68d 0%, #2ecc71 100%);
+    background: linear-gradient(135deg, #ff8533 0%, #ff6600 100%);
 }
 
 #add-card-btn:hover {
-    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #cc5200 100%);
 }
 
 /* Board Layout */
@@ -67,17 +68,20 @@ button:hover {
     padding: 20px;
     overflow-x: auto;
     min-height: calc(100vh - 80px);
+    justify-content: space-between;
 }
 
 .column {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    width: 300px;
-    min-width: 300px;
+    flex: 1;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    height: fit-content;
+    align-self: flex-start;
 }
 
 .column h2 {
@@ -102,19 +106,15 @@ button:hover {
     background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
 }
 
-#blocked-column h2 {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-}
-
 #done-column h2 {
     background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
 }
 
 .card-container {
     padding: 15px;
-    flex-grow: 1;
-    min-height: 100px;
     background: rgba(245, 247, 250, 0.5);
+    height: auto;
+    min-height: 50px;
 }
 
 /* Cards */

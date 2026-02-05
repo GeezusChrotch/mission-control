@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roboboogie Automation To Do</title>
+    <title>Mr. Clawncy's Fanciful Projects</title>
     <link rel="stylesheet" href="kanban.css">
+    <link rel="icon" type="image/jpeg" href="mr-clawncy.jpg">
 </head>
 <body>
     <header>
-        <h1>🤖 Roboboogie Automation To Do</h1>
+        <h1><img src="mr-clawncy.jpg" alt="Mr. Clawncy" style="height: 40px; width: 40px; vertical-align: middle; border-radius: 50%; object-fit: cover; margin-right: 10px;"> Mr. Clawncy's Fanciful Projects</h1>
         <div class="header-buttons">
             <button id="add-card-btn">+ Add Card</button>
             <button id="save-board-btn">Save Board</button>
@@ -30,11 +31,6 @@
         <div class="column" id="inprogress-column">
             <h2>In Progress</h2>
             <div class="card-container" data-column="inprogress"></div>
-        </div>
-        
-        <div class="column" id="blocked-column">
-            <h2>Blocked</h2>
-            <div class="card-container" data-column="blocked"></div>
         </div>
         
         <div class="column" id="done-column">
@@ -80,7 +76,6 @@
                         <option value="suggestions">Suggestions</option>
                         <option value="todo">To Do</option>
                         <option value="inprogress">In Progress</option>
-                        <option value="blocked">Blocked</option>
                         <option value="done">Done</option>
                     </select>
                 </div>

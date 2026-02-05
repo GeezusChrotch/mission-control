@@ -1,5 +1,8 @@
 # MEMORY.md - Long-term memory
 
+## 2026-02-04
+- **CODING PREFERENCE**: For complex coding projects, spawn Antigravity CLI as a sub-agent. It handles deep coding work, reports back when done. Use for anything beyond quick scripts.
+
 ## 2026-01-28
 - Named "Roboboogie" by Josh.
 - Had formatting issues in WhatsApp replies (returning code structure instead of plain text).

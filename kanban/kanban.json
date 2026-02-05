@@ -1,33 +1,9 @@
 {
   "cards": [
     {
-      "id": "card-1",
-      "title": "Fix weather formatting",
-      "description": "Use plain text for clean Telegram output in morning briefing. Added 2-day forecast with detailed hourly breakdown.\n\n\ud83d\udcc5 Created: Jan 30, 3:30 PM\n\ud83d\udd04 Status: Done (Jan 31, 10:40 AM)",
-      "column": "done",
-      "createdAt": "2026-01-30T15:30:00-08:00",
-      "statusChanges": [
-        {
-          "from": null,
-          "to": "todo",
-          "timestamp": "2026-01-30T15:30:00-08:00"
-        },
-        {
-          "from": "todo",
-          "to": "inprogress",
-          "timestamp": "2026-01-31T09:15:00-08:00"
-        },
-        {
-          "from": "inprogress",
-          "to": "done",
-          "timestamp": "2026-01-31T10:40:00-08:00"
-        }
-      ]
-    },
-    {
       "id": "card-2",
       "title": "Add OpenRouter alerts",
-      "description": "Notify if balance drops below $40 in briefing\n\n\ud83d\udcc5 Created: Jan 30, 4:45 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:15 PM)\n\nAdded balance check section to morning-briefing.sh. Shows current balance and alerts with ⚠️ icon if below $40. Requires OPENROUTER_API_KEY.",
+      "description": "Notify if balance drops below $40 in briefing\n\n\ud83d\udcc5 Created: Jan 30, 4:45 PM\n\ud83d\udd04 Status: Done (Feb 2, 12:15 PM)\n\nAdded balance check section to morning-briefing.sh. Shows current balance and alerts with \u26a0\ufe0f icon if below $40. Requires OPENROUTER_API_KEY.",
       "column": "done",
       "createdAt": "2026-01-30T16:45:00-08:00",
       "statusChanges": [
@@ -193,44 +169,70 @@
       ]
     },
     {
-      "id": "suggestion-1",
-      "title": "\ud83e\udd16 Auto-OpenRouter Balance Check",
-      "description": "Check OpenRouter API balance daily and log if below threshold. Store in /Users/Josh/clawd/.openrouter_balance for tracking trends over time.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
-      "column": "suggestions",
-      "createdAt": "2026-01-31T23:30:00-08:00",
-      "statusChanges": [
-        {
-          "from": null,
-          "to": "suggestions",
-          "timestamp": "2026-01-31T23:30:00-08:00"
-        }
-      ]
-    },
-    {
       "id": "suggestion-2",
       "title": "\ud83d\udcca Daily Cost Summary Script",
-      "description": "Create a script that calculates daily API spend across all providers and logs it to a file. Run via cron at midnight.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
-      "column": "suggestions",
+      "description": "Create a script that calculates daily API spend across all providers and logs it to a file. Run via cron at midnight.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM\n\ud83d\udd04 Status: Blocked (Feb 4, 4:47 PM)",
+      "column": "blocked",
       "createdAt": "2026-01-31T23:30:00-08:00",
       "statusChanges": [
         {
           "from": null,
           "to": "suggestions",
           "timestamp": "2026-01-31T23:30:00-08:00"
+        },
+        {
+          "from": "suggestions",
+          "to": "todo",
+          "timestamp": "2026-02-05T00:28:34.963Z"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-05T00:45:35.300Z"
+        },
+        {
+          "from": "inprogress",
+          "to": "blocked",
+          "timestamp": "2026-02-05T00:47:39.707Z"
         }
       ]
     },
     {
       "id": "suggestion-4",
       "title": "\ud83d\udcdd Auto-Daily Summary",
-      "description": "Create a script that summarizes what was accomplished each day based on kanban card changes and saves to memory/YYYY-MM-DD.md automatically.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM",
-      "column": "suggestions",
+      "description": "Create a script that summarizes what was accomplished each day based on kanban card changes and saves to memory/YYYY-MM-DD.md automatically.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM\n\ud83d\udd04 Status: Done (Feb 4, 5:04 PM)",
+      "column": "done",
       "createdAt": "2026-01-31T23:30:00-08:00",
       "statusChanges": [
         {
           "from": null,
           "to": "suggestions",
           "timestamp": "2026-01-31T23:30:00-08:00"
+        },
+        {
+          "from": "suggestions",
+          "to": "todo",
+          "timestamp": "2026-02-05T00:47:48.775Z"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-05T00:54:11.653Z"
+        },
+        {
+          "from": "inprogress",
+          "to": "todo",
+          "timestamp": "2026-02-05T01:04:02.019Z"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-04T17:08:43.951973Z"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-04T17:09:49.359984Z"
         }
       ]
     },

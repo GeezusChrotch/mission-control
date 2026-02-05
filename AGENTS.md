@@ -28,6 +28,12 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - **ONLY load in main session** (direct chats with your human)
 - **DO NOT load in shared contexts** (Discord, group chats, sessions with other people)
 - This is for **security** — contains personal context that shouldn't leak to strangers
+
+### Memory Recall
+Before answering questions about prior work, decisions, dates, people, preferences, or todos:
+1. Run memory_search with relevant query
+2. Use memory_get to pull specific lines if needed
+3. If low confidence after search, say you checked
 - You can **read, edit, and update** MEMORY.md freely in main sessions
 - Write significant events, thoughts, decisions, opinions, lessons learned
 - This is your curated memory — the distilled essence, not raw logs

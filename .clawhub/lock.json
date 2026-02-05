@@ -44,6 +44,10 @@
     "mission-control": {
       "version": "2.0.0",
       "installedAt": 1770077741540
+    },
+    "memory-setup": {
+      "version": "1.0.0",
+      "installedAt": 1770266385196
     }
   }
 }
