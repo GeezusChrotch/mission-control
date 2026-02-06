@@ -145,59 +145,6 @@
       ]
     },
     {
-      "id": "card-10",
-      "title": "test",
-      "description": "card test\n\n\ud83d\udcc5 Created: Jan 31, 11:01 AM\n\ud83d\udd04 Status: Done (Jan 31, 11:30 PM)",
-      "column": "done",
-      "createdAt": "2026-01-31T11:01:00-08:00",
-      "statusChanges": [
-        {
-          "from": null,
-          "to": "todo",
-          "timestamp": "2026-01-31T11:01:00-08:00"
-        },
-        {
-          "from": "todo",
-          "to": "inprogress",
-          "timestamp": "2026-01-31T11:06:00-08:00"
-        },
-        {
-          "from": "inprogress",
-          "to": "done",
-          "timestamp": "2026-01-31T23:30:00-08:00"
-        }
-      ]
-    },
-    {
-      "id": "suggestion-2",
-      "title": "\ud83d\udcca Daily Cost Summary Script",
-      "description": "Create a script that calculates daily API spend across all providers and logs it to a file. Run via cron at midnight.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM\n\ud83d\udd04 Status: Blocked (Feb 4, 4:47 PM)",
-      "column": "blocked",
-      "createdAt": "2026-01-31T23:30:00-08:00",
-      "statusChanges": [
-        {
-          "from": null,
-          "to": "suggestions",
-          "timestamp": "2026-01-31T23:30:00-08:00"
-        },
-        {
-          "from": "suggestions",
-          "to": "todo",
-          "timestamp": "2026-02-05T00:28:34.963Z"
-        },
-        {
-          "from": "todo",
-          "to": "inprogress",
-          "timestamp": "2026-02-05T00:45:35.300Z"
-        },
-        {
-          "from": "inprogress",
-          "to": "blocked",
-          "timestamp": "2026-02-05T00:47:39.707Z"
-        }
-      ]
-    },
-    {
       "id": "suggestion-4",
       "title": "\ud83d\udcdd Auto-Daily Summary",
       "description": "Create a script that summarizes what was accomplished each day based on kanban card changes and saves to memory/YYYY-MM-DD.md automatically.\n\n\ud83d\udcc5 Created: Jan 31, 11:30 PM\n\ud83d\udd04 Status: Done (Feb 4, 5:04 PM)",
@@ -438,6 +385,231 @@
           "from": "inprogress",
           "to": "done",
           "timestamp": "2026-02-02T12:30:00-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-sd-2",
+      "title": "\ud83c\udfb5 AI Sample Tagger",
+      "description": "Use Whisper to analyze SFX files and auto-generate searchable metadata tags and rename files.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-sd-4",
+      "title": "\ud83c\udfb5 Mic Check Logger",
+      "description": "Voice memo \u2192 transcribed mic check notes, auto-filed by show date.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-sd-5",
+      "title": "\ud83c\udfb5 Cable Inventory Tracker",
+      "description": "QR codes on cable cases, scan to check in/out for shows.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-prod-1",
+      "title": "\u26a1 Voice-to-Kanban",
+      "description": "Voice memo 'remind me to...' \u2192 auto-creates kanban card with smart parsing.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-prod-2",
+      "title": "\u26a1 Smart Focus Blocks",
+      "description": "Calendar integration that auto-blocks 90-min focus sessions when no meetings.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-prod-3",
+      "title": "\u26a1 Daily Prep Briefing",
+      "description": "15-min before work: urgent unread emails + today's calendar + due tasks.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-prod-4",
+      "title": "\u26a1 Auto-Expense Logger",
+      "description": "Parse receipt photos \u2192 extract amount/vendor \u2192 log to spreadsheet.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-prod-5",
+      "title": "\u26a1 Meeting Transcription Bot",
+      "description": "Joins Zoom/Teams, transcribes, extracts action items \u2192 kanban tasks.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-time-1",
+      "title": "\u23f0 Contextual Pomodoro",
+      "description": "Timer that reads your kanban and suggests what to work on next.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-time-2",
+      "title": "\u23f0 Energy-Based Scheduling",
+      "description": "Track when you're most productive, suggest high-focus tasks during peak hours.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-time-3",
+      "title": "\u23f0 Deadline Buffer Calculator",
+      "description": "Auto-adds 20% buffer to calendar events to prevent back-to-back overload.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-time-4",
+      "title": "\u23f0 Weekly Review Automation",
+      "description": "Friday afternoon summary: what got done, what didn't, what's next week.\n\n\ud83d\udcc5 Created: Feb 5 at 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5 at 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "suggest-time-5",
+      "title": "\u23f0 Distraction Blocker",
+      "description": "During 'focus' kanban tasks, temporarily mute non-urgent notifications.\n\n\ud83d\udcc5 Created: Feb 5, 7:07 AM\n\ud83d\udd04 Status: Suggestions (Feb 5, 7:07 AM)",
+      "column": "suggestions",
+      "createdAt": "2026-02-05T07:07:54-08:00",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "suggestions",
+          "timestamp": "2026-02-05T07:07:54-08:00"
+        }
+      ]
+    },
+    {
+      "id": "card-17",
+      "title": "Mean Girls Sound Effects",
+      "description": "✅ COMPLETED - Downloaded 12 sound effects:\n• 3x School bell rings\n• 3x Siren/whoop whoop sounds\n• 3x Phone buzz/beep/vibrate\n• 3x Jingle Bell Rock drum beats\n\nLocation: Dropbox/- LMT Audio/- Generated SFX/Mean Girls/\n\n\ud83d\udcc5 Created: Feb 6 at 1:03 AM\n\ud83d\udd04 Status: Done (Feb 6 at 1:35 AM)",
+      "column": "done",
+      "createdAt": "2026-02-06T09:03:57.733Z",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-06T09:03:57.733Z"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-06T09:25:00.000Z"
+        },
+        {
+          "from": "inprogress",
+          "to": "done",
+          "timestamp": "2026-02-06T09:35:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "card-18",
+      "title": "Sweeney Performance Reports",
+      "description": "For the next three weeks I\u2019ll get performance reports for Sweeney Todd in my work email. Create a new Apple Note that catalogs anything mentioned in the Audio/Sound section of the reports. Check each morning at 7am.\n\n\ud83d\udcc5 Created: Feb 6 at 1:07 AM\n\ud83d\udd04 Status: In Progress (Feb 6 at 1:25 AM)",
+      "column": "inprogress",
+      "createdAt": "2026-02-06T09:07:39.946Z",
+      "statusChanges": [
+        {
+          "from": null,
+          "to": "todo",
+          "timestamp": "2026-02-06T09:07:39.946Z"
+        },
+        {
+          "from": "todo",
+          "to": "inprogress",
+          "timestamp": "2026-02-06T09:25:00.000Z"
         }
       ]
     }

@@ -31,3 +31,17 @@ memory/*.json
 *.swp
 *.swo
 *~
+
+# Avatar images
+avatars/*.png
+
+# Logs and briefing archives
+logs/
+morning-briefing*.txt
+*.log
+
+# Archive folders
+archive/
+
+# Data folder contents
+data/*.log
