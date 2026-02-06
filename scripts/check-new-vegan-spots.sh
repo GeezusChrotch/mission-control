@@ -2,7 +2,8 @@
 # Check for new vegan restaurants within 10 miles of Buena Park
 # Compares against previously seen spots and reports new ones
 
-API_KEY="AIzaSyC1id4ykRiPgmykKz0q6jV8kUjGD_GScfE"
+# API key from OpenClaw config (skills.local-places.apiKey)
+API_KEY="${GOOGLE_PLACES_API_KEY}"
 DATA_DIR="/Users/Josh/clawd/data"
 KNOWN_FILE="$DATA_DIR/known-vegan-spots.json"
 
