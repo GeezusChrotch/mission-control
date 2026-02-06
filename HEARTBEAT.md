@@ -10,6 +10,7 @@ Generate and send a comprehensive morning briefing to iMessage (jbessom@me.com) 
 4. **All Google Calendars** - Events from ALL calendars for today + next 7 days for birthdays
 5. **News** - blogwatcher/RSS recent articles (3 per source)
 6. **Kanban Board** - Check kanban.json for in-progress tasks, todo items, and overdue items
+7. **New Vegan Spots** - Google Places API check for new restaurants within 10 miles
 
 ## Google Calendars (All)
 
@@ -67,6 +68,11 @@ Tomorrow: High XX°F / Low XX°F
 ⚠️ OVERDUE (check timestamps):
   • [task] - [age]
 (Skip sections if empty)
+
+🌱 NEW VEGAN SPOTS
+[Only include if new spots found - run check-new-vegan-spots.sh]
+• [name] (⭐rating) - [address]
+(Skip section if no new spots)
 
 📰 NEWS — 9 stories (3 per source)
 
@@ -142,8 +148,14 @@ cat /Users/Josh/clawd/kanban/kanban.json
 
 ### News
 ```bash
-python3 /Users/Josh/clawd/morning-rss-json.py 3
+python3 /Users/Josh/clawd/scripts/morning-rss-json.py 3
 # Outputs 3 articles each from Democracy Now, LA Times, The Intercept
+```
+
+### New Vegan Spots (Google Places API)
+```bash
+/Users/Josh/clawd/scripts/check-new-vegan-spots.sh
+# Compares against known spots, reports any new ones within 10 miles of Buena Park
 ```
 
 ## Instructions
