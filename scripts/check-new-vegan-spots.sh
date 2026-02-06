@@ -3,7 +3,12 @@
 # Compares against previously seen spots and reports new ones
 
 # API key from OpenClaw config (skills.local-places.apiKey)
-API_KEY="${GOOGLE_PLACES_API_KEY}"
+API_KEY=$(jq -r '.skills["local-places"].apiKey' ~/.openclaw/openclaw.json 2>/dev/null)
+if [ -z "$API_KEY" ] || [ "$API_KEY" = "null" ]; then
+  echo "Error: Google Places API key not found in ~/.openclaw/openclaw.json"
+  echo "Set it with: jq '.skills[\"local-places\"].apiKey = \"YOUR_KEY\"' ~/.openclaw/openclaw.json"
+  exit 1
+fi
 DATA_DIR="/Users/Josh/clawd/data"
 KNOWN_FILE="$DATA_DIR/known-vegan-spots.json"
 

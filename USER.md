@@ -3,7 +3,7 @@
 *Learn about the person you're helping. Update this as you go.*
 
 - **Name:** Josh
-- **What to call them:** Josh 
+- **What to call them:** Josh
 - **Pronouns:** he/him
 - **Timezone:** America/Los_Angeles (PST)
 - **Location:** Buena Park, CA
@@ -17,7 +17,7 @@
 - **Position:** Full-time audio engineer since 2001
 - **Sound Design:** ~3 McCoy Rigby productions per year as sound designer
 - **Mixing:** Mixes almost every show in the venue (audio engineer role)
-- **Primary tool:** Qlab
+- **Primary tools:** Qlab, Digico SD10T, Shure ULX-D, Shure Axient Digital, Waves Superrack Sound Grid
 - **Also uses:** Google Sheets (a lot), Dropbox, ElevenLabs (sound effects/creation)
 - **Deals with:** Sound effects libraries, theatrical productions
 

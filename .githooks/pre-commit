@@ -1,0 +1,76 @@
+#!/bin/bash
+# Pre-commit hook to prevent API key/token exposure
+# Install: cp .githooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+set -e
+
+echo "Checking for secrets in staged files..."
+
+# Patterns to check (extended regex)
+GOOGLE_API='AIza[0-9A-Za-z_-]{35}'
+GENERIC_KEY='api[_-]?key["'"'"']?\s*[:=]\s*["'"'"']?[a-zA-Z0-9_-]{20,}'
+TOKEN_PATTERN='token["'"'"']?\s*[:=]\s*["'"'"']?[a-zA-Z0-9_-]{20,}'
+AWS_KEY='AKIA[0-9A-Z]{16}'
+OPENAI_KEY='sk-[a-zA-Z0-9]{20,}'
+SECRET_PATTERN='secret["'"'"']?\s*[:=]\s*["'"'"']?[a-zA-Z0-9_-]{20,}'
+PRIVATE_KEY='BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY'
+
+FOUND=0
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+for file in $STAGED_FILES; do
+  # Skip binary files and non-existent files
+  [ -f "$file" ] || continue
+  if file "$file" | grep -q "binary"; then
+    continue
+  fi
+  
+  # Get staged file content
+  CONTENT=$(git show :"$file" 2>/dev/null) || continue
+  
+  # Check Google API keys
+  if echo "$CONTENT" | grep -Eq "$GOOGLE_API"; then
+    echo "⚠️  POTENTIAL GOOGLE API KEY in $file"
+    echo "$CONTENT" | grep -Eo "$GOOGLE_API" | head -1 | sed 's/^/   /'
+    FOUND=1
+  fi
+  
+  # Check AWS keys
+  if echo "$CONTENT" | grep -Eq "$AWS_KEY"; then
+    echo "⚠️  POTENTIAL AWS KEY in $file"
+    echo "$CONTENT" | grep -Eo "$AWS_KEY" | head -1 | sed 's/^/   /'
+    FOUND=1
+  fi
+  
+  # Check OpenAI keys
+  if echo "$CONTENT" | grep -Eq "$OPENAI_KEY"; then
+    echo "⚠️  POTENTIAL OPENAI KEY in $file"
+    echo "$CONTENT" | grep -Eo "$OPENAI_KEY" | head -1 | sed 's/^/   /'
+    FOUND=1
+  fi
+  
+  # Check private keys
+  if echo "$CONTENT" | grep -Eq "$PRIVATE_KEY"; then
+    echo "⚠️  PRIVATE KEY in $file"
+    FOUND=1
+  fi
+done
+
+if [ $FOUND -eq 1 ]; then
+  echo ""
+  echo "❌ COMMIT BLOCKED"
+  echo ""
+  echo "Possible secrets detected. If these are false positives:"
+  echo "   git commit --no-verify"
+  echo ""
+  echo "Otherwise, remove the secrets and commit again."
+  echo ""
+  exit 1
+fi
+
+echo "✅ No secrets detected."
+exit 0
